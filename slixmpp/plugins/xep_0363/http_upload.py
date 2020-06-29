@@ -154,7 +154,7 @@ class XEP_0363(BasePlugin):
                     slot['put']['url'],
                     data=input_file,
                     headers=headers,
-                    timeout=timeout)
+                    timeout=timeout, ssl=False)
             if response.status >= 400:
                 raise HTTPError(response.status, await response.text())
             log.info('Response code: %d (%s)', response.status, await response.text())
